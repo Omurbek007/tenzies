@@ -1,0 +1,11 @@
+main {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+}
