@@ -3,21 +3,30 @@ import Die from './Die'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState([0,1,2,3,4,5,6,7,8,9])
+
+  function generateNum () {
+    return new Array(10)
+    .fill()
+    .map(() => Math.ceil(Math.random() * 6))
+  }
+  console.log(generateNum())
 
   return (
     <>
       <main>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
-      <Die value={count}/>
+        <div className="btn-container">
+          <Die getNum={generateNum} value={0}/>
+      <Die value={1}/>
+      <Die value={2}/>
+      <Die value={3}/>
+      <Die value={4}/>
+      <Die value={5}/>
+      <Die value={6}/>
+      <Die value={1}/>
+      <Die value={1}/>
+      <Die value={1}/>
+        </div>
+      
       </main>
     </>
   )

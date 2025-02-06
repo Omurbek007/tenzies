@@ -1,9 +1,7 @@
 export default function Die(props) {
     return (
-        <div>
-            {props.value.map((el, index) => (
-                <button key={index}>{el}</button>
-            ))}
+        <div className="btns">
+            <button onClick={props.getNum}>{props.value}</button>
         </div>
     )
 }
