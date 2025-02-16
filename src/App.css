@@ -47,6 +47,10 @@ main {
   border-radius: 6px;
 }
 
+.roll-btn:focus {
+  background-color: #127270;
+}
+
 .title {
   font-size: 2.5em;
   font-weight: bold;
