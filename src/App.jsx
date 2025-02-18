@@ -53,7 +53,13 @@ function App() {
     setDice(prevDice => prevDice.map(die => die.id === id ? { ...die, isHeld: !die.isHeld } : die))
   }
 
+  const wonStyle = {
+    color: "rgb(255, 100, 100)",
+    fontSize: "2.5rem",
+    transition: "all 0.5s ease-in-out"
+  }
 
+  const wonText = "You Did in " + time + " seconds"
 
   return (
     <>
@@ -61,7 +67,7 @@ function App() {
         {gameWon && <Confetti />}
         <h1 className="title">Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-        <h2>{time} {time > 1 ? "seconds passed" : "second passed"} </h2>
+        <h2 style={gameWon ? wonStyle : {color:"rgb(41, 86, 41)"}}>{gameWon ? wonText : time}</h2>
         <button onClick={startGame} className='timer'>Start Timer</button>
         <div className="btn-container">
           {dice.map((el) => <Die key={el.id} hold={() => hold(el.id)} isHeld={el.isHeld} dice={el.value} />)}
